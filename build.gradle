@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  compile 'org.springframework.boot:spring-boot'
+  compile 'org.springframework.cloud:spring-cloud-starter-oauth2:1.0.1.RELEASE'
+  compile 'org.springframework.cloud:spring-cloud-spring-service-connector:1.2.0.RELEASE'
+  compile 'org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.2.0.RELEASE'
+  testCompile group: 'org.springframework', name: 'spring-test'
+  testCompile group: 'junit', name: 'junit', version:'4.11'
+  testCompile group: 'org.mockito', name: 'mockito-all', version:'1.8.5'
+  testCompile group: "org.springframework.cloud", name: "spring-cloud-cloudfoundry-connector", classifier: "tests"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
+

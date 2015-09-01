@@ -1,0 +1,10 @@
+*~
+#*
+.#*
+*#
+.project
+.DS_Store
+*.iml
+.idea/
+.gradle
+

@@ -19,8 +19,8 @@ public class SsoServiceCredentialsListener implements ApplicationListener<Applic
     private static final String PROPERTY_SOURCE_NAME = "vcapClientCredentials";
     private static final String SPRING_OAUTH2_CLIENT_ID = "spring.oauth2.client.clientId";
     private static final String SPRING_OAUTH2_CLIENT_SECRET = "spring.oauth2.client.clientSecret";
-    private static final String SPRING_OAUTH2_AUTHORIZE_URI = "spring.oauth2.client.authorizeUri";
-    private static final String ID_SERVICE_URL = "idServiceUrl";
+    private static final String SPRING_OAUTH2_AUTHORIZE_URI = "spring.oauth2.client.userAuthorizationUri";
+    private static final String SPRING_OAUTH2_KEY_URI = "spring.oauth2.resource.jwt.keyUri";
     private static final String SPRING_OAUTH2_ACCESS_TOKEN_URI = "spring.oauth2.client.accessTokenUri";
 
     private Cloud cloud;
@@ -45,7 +45,7 @@ public class SsoServiceCredentialsListener implements ApplicationListener<Applic
                 map.put(SPRING_OAUTH2_CLIENT_SECRET, ((SsoServiceInfo) serviceInfo).getClientSecret());
                 map.put(SPRING_OAUTH2_ACCESS_TOKEN_URI, ((SsoServiceInfo) serviceInfo).getAuthDomain() + "/oauth/token");
                 map.put(SPRING_OAUTH2_AUTHORIZE_URI, ((SsoServiceInfo) serviceInfo).getAuthDomain() + "/oauth/authorize");
-                map.put(ID_SERVICE_URL, ((SsoServiceInfo) serviceInfo).getAuthDomain());
+                map.put(SPRING_OAUTH2_KEY_URI, ((SsoServiceInfo) serviceInfo).getAuthDomain() + "/token_key");
                 MapPropertySource mapPropertySource = new MapPropertySource(PROPERTY_SOURCE_NAME, map);
 
                 event.getEnvironment().getPropertySources().addFirst(mapPropertySource);

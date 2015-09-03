@@ -14,9 +14,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class SsoServiceCredentialsListener implements ApplicationListener<ApplicationEnvironmentPreparedEvent>, Ordered {
+public class SsoServiceCredentialsListener implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
 
-    private static final String PROPERTY_SOURCE_NAME = "vcapClientCredentials";
+    private static final String PROPERTY_SOURCE_NAME = "vcapPivotalSso";
     private static final String SPRING_OAUTH2_CLIENT_ID = "spring.oauth2.client.clientId";
     private static final String SPRING_OAUTH2_CLIENT_SECRET = "spring.oauth2.client.clientSecret";
     private static final String SPRING_OAUTH2_AUTHORIZE_URI = "spring.oauth2.client.userAuthorizationUri";
@@ -51,10 +51,5 @@ public class SsoServiceCredentialsListener implements ApplicationListener<Applic
                 event.getEnvironment().getPropertySources().addFirst(mapPropertySource);
             }
         }
-    }
-
-    @Override
-    public int getOrder() {
-        return Ordered.HIGHEST_PRECEDENCE + 4;
     }
 }

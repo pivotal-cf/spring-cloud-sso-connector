@@ -1,21 +1,31 @@
 description = 'Spring Cloud Connector Extension for Pivotal Single Sign On Service on Pivotal Cloud Foundry'
 
 buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
-    }
+  repositories {
+    maven { url "https://repo.spring.io/plugins-release" }
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath("org.springframework.build.gradle:propdeps-plugin:0.0.7")
+    classpath("io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE")
+    classpath("io.spring.gradle:spring-io-plugin:0.0.4.RELEASE")
+  }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
 
 repositories {
     mavenCentral()
+}
+
+dependencyManagement {
+  imports {
+    mavenBom "org.springframework.cloud:spring-cloud-starter-parent:Angel.SR3"
+  }
 }
 
 javadoc {
@@ -39,17 +49,14 @@ group = "io.pivotal.spring.cloud"
 version = "1.0.0-SNAPSHOT"
 
 dependencies {
-  compile 'org.springframework.boot:spring-boot'
-  compile 'org.springframework.cloud:spring-cloud-starter-oauth2:1.0.1.RELEASE'
-  compile 'org.springframework.cloud:spring-cloud-spring-service-connector:1.2.0.RELEASE'
-  compile 'org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.2.0.RELEASE'
-  testCompile group: 'org.springframework', name: 'spring-test'
-  testCompile group: 'junit', name: 'junit', version:'4.11'
-  testCompile group: 'org.mockito', name: 'mockito-all', version:'1.8.5'
+  compile 'org.springframework.cloud:spring-cloud-starter-oauth2'
+  compile 'org.springframework.cloud:spring-cloud-spring-service-connector'
+  compile 'org.springframework.cloud:spring-cloud-cloudfoundry-connector'
+  testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
   testCompile group: "org.springframework.cloud", name: "spring-cloud-cloudfoundry-connector", classifier: "tests"
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.12'
+    gradleVersion = '2.2.1'
 }
 

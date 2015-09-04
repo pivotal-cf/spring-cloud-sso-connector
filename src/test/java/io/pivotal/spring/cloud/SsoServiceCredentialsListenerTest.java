@@ -50,6 +50,7 @@ public class SsoServiceCredentialsListenerTest {
         assertEquals("test-auth-domain/oauth/token", environment.getProperty("spring.oauth2.client.accessTokenUri"));
         assertEquals("test-auth-domain/oauth/authorize", environment.getProperty("spring.oauth2.client.userAuthorizationUri"));
         assertEquals("test-auth-domain/token_key", environment.getProperty("spring.oauth2.resource.jwt.keyUri"));
+        assertEquals("test-auth-domain", environment.getProperty("idServiceUrl"));
     }
 
     public static class TestConfig {

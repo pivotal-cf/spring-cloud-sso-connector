@@ -1,3 +1,5 @@
+description = 'Spring Cloud Connector Extension for Pivotal Single Sign On Service on Pivotal Cloud Foundry'
+
 buildscript {
     repositories {
         mavenCentral()
@@ -15,6 +17,26 @@ apply plugin: 'spring-boot'
 repositories {
     mavenCentral()
 }
+
+javadoc {
+  options.memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
+  options.author = true
+  options.header = project.name
+}
+
+task packageSources(type: Jar) {
+  classifier = 'sources'
+  from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar) {
+  classifier = "javadoc"
+  from javadoc
+}
+
+archivesBaseName = "spring-cloud-sso-connector"
+group = "io.pivotal.spring.cloud"
+version = "1.0.0-SNAPSHOT"
 
 dependencies {
   compile 'org.springframework.boot:spring-boot'

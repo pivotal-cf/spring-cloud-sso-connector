@@ -44,14 +44,15 @@ public class SsoServiceCredentialsListener implements ApplicationListener<Applic
         for (ServiceInfo serviceInfo : cloud.getServiceInfos()) {
             if (serviceInfo instanceof SsoServiceInfo) {
                 Map map = new HashMap<String, String>();
-                map.put(SPRING_OAUTH2_CLIENT_ID, ((SsoServiceInfo) serviceInfo).getClientId());
-                map.put(SPRING_OAUTH2_CLIENT_SECRET, ((SsoServiceInfo) serviceInfo).getClientSecret());
-                map.put(SPRING_OAUTH2_ACCESS_TOKEN_URI, ((SsoServiceInfo) serviceInfo).getAuthDomain() + "/oauth/token");
-                map.put(SPRING_OAUTH2_AUTHORIZE_URI, ((SsoServiceInfo) serviceInfo).getAuthDomain() + "/oauth/authorize");
-                map.put(SPRING_OAUTH2_KEY_URI, ((SsoServiceInfo) serviceInfo).getAuthDomain() + "/token_key");
-                map.put(ID_SERVICE_URL, ((SsoServiceInfo) serviceInfo).getAuthDomain());
-                map.put(SPRING_OAUTH2_USER_INFO_URI, ((SsoServiceInfo) serviceInfo).getAuthDomain() + "/userinfo");
-                map.put(SPRING_OAUTH2_TOKEN_INFO_URI, ((SsoServiceInfo) serviceInfo).getAuthDomain() + "/check_token");
+                SsoServiceInfo ssoServiceInfo = (SsoServiceInfo) serviceInfo;
+                map.put(SPRING_OAUTH2_CLIENT_ID, ssoServiceInfo.getClientId());
+                map.put(SPRING_OAUTH2_CLIENT_SECRET, ssoServiceInfo.getClientSecret());
+                map.put(SPRING_OAUTH2_ACCESS_TOKEN_URI, ssoServiceInfo.getAuthDomain() + "/oauth/token");
+                map.put(SPRING_OAUTH2_AUTHORIZE_URI, ssoServiceInfo.getAuthDomain() + "/oauth/authorize");
+                map.put(SPRING_OAUTH2_KEY_URI, ssoServiceInfo.getAuthDomain() + "/token_key");
+                map.put(ID_SERVICE_URL, ssoServiceInfo.getAuthDomain());
+                map.put(SPRING_OAUTH2_USER_INFO_URI, ssoServiceInfo.getAuthDomain() + "/userinfo");
+                map.put(SPRING_OAUTH2_TOKEN_INFO_URI, ssoServiceInfo.getAuthDomain() + "/check_token");
                 MapPropertySource mapPropertySource = new MapPropertySource(PROPERTY_SOURCE_NAME, map);
 
                 event.getEnvironment().getPropertySources().addFirst(mapPropertySource);

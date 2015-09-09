@@ -22,7 +22,7 @@ public class SsoServiceCredentialsListener implements ApplicationListener<Applic
     private static final String SPRING_OAUTH2_AUTHORIZE_URI = "spring.oauth2.client.userAuthorizationUri";
     private static final String SPRING_OAUTH2_KEY_URI = "spring.oauth2.resource.jwt.keyUri";
     private static final String SPRING_OAUTH2_ACCESS_TOKEN_URI = "spring.oauth2.client.accessTokenUri";
-    private static final String ID_SERVICE_URL = "idServiceUrl";
+    private static final String PIVOTAL_SSO_TARGET = "pivotal-sso.target";
     private static final String SPRING_OAUTH2_USER_INFO_URI = "spring.oauth2.resource.userInfoUri";
     private static final String SPRING_OAUTH2_TOKEN_INFO_URI = "spring.oauth2.resource.tokenInfoUri";
 
@@ -50,7 +50,7 @@ public class SsoServiceCredentialsListener implements ApplicationListener<Applic
                 map.put(SPRING_OAUTH2_ACCESS_TOKEN_URI, ssoServiceInfo.getAuthDomain() + "/oauth/token");
                 map.put(SPRING_OAUTH2_AUTHORIZE_URI, ssoServiceInfo.getAuthDomain() + "/oauth/authorize");
                 map.put(SPRING_OAUTH2_KEY_URI, ssoServiceInfo.getAuthDomain() + "/token_key");
-                map.put(ID_SERVICE_URL, ssoServiceInfo.getAuthDomain());
+                map.put(PIVOTAL_SSO_TARGET, ssoServiceInfo.getAuthDomain());
                 map.put(SPRING_OAUTH2_USER_INFO_URI, ssoServiceInfo.getAuthDomain() + "/userinfo");
                 map.put(SPRING_OAUTH2_TOKEN_INFO_URI, ssoServiceInfo.getAuthDomain() + "/check_token");
                 MapPropertySource mapPropertySource = new MapPropertySource(PROPERTY_SOURCE_NAME, map);

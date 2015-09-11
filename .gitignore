@@ -8,3 +8,8 @@
 .idea/
 .gradle
 
+/build/
+/bin/
+.project
+.settings
+.classpath

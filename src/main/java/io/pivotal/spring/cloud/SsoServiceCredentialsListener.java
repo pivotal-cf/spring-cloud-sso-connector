@@ -7,7 +7,6 @@ import org.springframework.cloud.CloudFactory;
 import org.springframework.cloud.service.ServiceInfo;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.Ordered;
 import org.springframework.core.env.MapPropertySource;
 
 import java.util.HashMap;
@@ -43,7 +42,7 @@ public class SsoServiceCredentialsListener implements ApplicationListener<Applic
 
         for (ServiceInfo serviceInfo : cloud.getServiceInfos()) {
             if (serviceInfo instanceof SsoServiceInfo) {
-                Map map = new HashMap<String, String>();
+                Map<String, Object> map = new HashMap<String, Object>();
                 SsoServiceInfo ssoServiceInfo = (SsoServiceInfo) serviceInfo;
                 map.put(SPRING_OAUTH2_CLIENT_ID, ssoServiceInfo.getClientId());
                 map.put(SPRING_OAUTH2_CLIENT_SECRET, ssoServiceInfo.getClientSecret());

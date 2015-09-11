@@ -50,7 +50,9 @@ public class SsoServiceCredentialsListenerTest {
         assertEquals("test-auth-domain/oauth/token", environment.getProperty("spring.oauth2.client.accessTokenUri"));
         assertEquals("test-auth-domain/oauth/authorize", environment.getProperty("spring.oauth2.client.userAuthorizationUri"));
         assertEquals("test-auth-domain/token_key", environment.getProperty("spring.oauth2.resource.jwt.keyUri"));
-        assertEquals("test-auth-domain", environment.getProperty("idServiceUrl"));
+        assertEquals("test-auth-domain/userinfo", environment.getProperty("spring.oauth2.resource.userInfoUri"));
+        assertEquals("test-auth-domain/check_token", environment.getProperty("spring.oauth2.resource.tokenInfoUri"));
+        assertEquals("test-auth-domain", environment.getProperty("pivotal-sso.target"));
     }
 
     public static class TestConfig {

@@ -47,7 +47,7 @@ task javadocJar(type: Jar) {
 
 archivesBaseName = "spring-cloud-sso-connector"
 group = "io.pivotal.spring.cloud"
-version = "1.0.0-SNAPSHOT"
+version = "1.0.0.BUILD-SNAPSHOT"
 
 dependencies {
   compile 'org.springframework.cloud:spring-cloud-starter-oauth2'

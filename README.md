@@ -1,14 +1,13 @@
 #Spring Cloud Single Sign-On Connector
 
-Spring Cloud Connector for using Single Sign-On service on Cloud Foundry
+Spring Cloud Connector for use with the Pivotal Single Sign-On Service on Cloud Foundry
 
 ### Spring Applications
 
-Spring Application can use this connector to auto-configure its OAuth 2.0 client
-which enables the application to authenticate via Single Sign-On with the UAA in
-Cloud Foundry.
+Spring Applications can use this connector to auto-configure its OAuth 2.0 client
+which enables the application with the Pivotal Single Sign-On Service
 
-The SSO Service provides the following properties to your spring application:
+This service provides the following properties to your spring application:
 
 Property Name  |  Value
 -------------- | ------
@@ -21,7 +20,7 @@ spring.oauth2.resource.userInfoUri  |  {ssoServiceUrl}/userinfo
 spring.oauth2.resource.tokenInfoUri  |  {ssoServiceUrl}/check_token
 spring.oauth2.resource.jwt.keyUri  |  {ssoServiceUrl}/token_key
 
-Obs.: The `ssoServiceUrl` is the UAA base location (e.g. `https://uaa.run.pivotal.io`)
+Note: ssoServiceUrl refers to the service uri corresponding to a Pivotal Single Sign-On service plan. For more information on configuring a service plan please refer to http://docs.pivotal.io/p-identity/index.html#create-plan
 
 ### Java Applications
 
@@ -39,4 +38,4 @@ ssoService.getAuthDomain();
 
 ### Sample Apps
 
-Sample apps are at https://github.com/pivotal-cf/identity-sample-apps
+Sample apps using this connector are available at https://github.com/pivotal-cf/identity-sample-apps

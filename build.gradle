@@ -59,7 +59,7 @@ artifacts {
 
 archivesBaseName = "spring-cloud-sso-connector"
 group = "io.pivotal.spring.cloud"
-version = "1.0.0.RC2"
+version = "1.1.0.BUILD-SNAPSHOT"
 
 dependencies {
   compile 'org.springframework.cloud:spring-cloud-starter-oauth2'

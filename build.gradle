@@ -89,6 +89,29 @@ install {
                 developerConnection 'scm:git:git@github.com:pivotal-cf/spring-cloud-sso-connector.git'
                 url 'https://github.com/pivotal-cf/spring-cloud-sso-connector/'
             }
+            developers {
+                developer {
+                    id 'cdutra'
+                    name 'Chris Dutra'
+                    roles{
+                        role 'Developer'
+                    }
+                }
+                developer {
+                    id 'mbhave'
+                    name 'Madhura Bhave'
+                    roles {
+                        role 'Developer'
+                    }
+                }
+                developer {
+                    id 'lechang'
+                    name 'Leslie Chang'
+                    roles {
+                        role 'Developer'
+                    }
+                }
+            }
         }
     }
 }

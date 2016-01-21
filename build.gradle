@@ -69,7 +69,6 @@ task wrapper(type: Wrapper) {
 
 archivesBaseName = "spring-cloud-sso-connector"
 group = "io.pivotal.spring.cloud"
-version = "1.0.0.RC3"
 
 install {
     repositories.mavenInstaller {

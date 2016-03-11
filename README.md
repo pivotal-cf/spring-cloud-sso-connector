@@ -11,7 +11,7 @@ This service provides the following properties to your spring application:
 
 Property Name  |  Value
 -------------- | ------
-ssoServiceUrl  |  e.g. https://uaa.run.pivotal.io
+ssoServiceUrl  |  e.g. https://login.run.pivotal.io
 security.oauth2.client.clientId  | client_id
 security.oauth2.client.clientSecret | client_secret
 security.oauth2.client.userAuthorizationUri  |  {ssoServiceUrl}/oauth/authorize

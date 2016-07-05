@@ -16,14 +16,14 @@ import java.util.Map;
 public class SsoServiceCredentialsListener implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
 
     private static final String PROPERTY_SOURCE_NAME = "vcapPivotalSso";
-    private static final String SPRING_OAUTH2_CLIENT_ID = "spring.oauth2.client.clientId";
-    private static final String SPRING_OAUTH2_CLIENT_SECRET = "spring.oauth2.client.clientSecret";
-    private static final String SPRING_OAUTH2_AUTHORIZE_URI = "spring.oauth2.client.userAuthorizationUri";
-    private static final String SPRING_OAUTH2_KEY_URI = "spring.oauth2.resource.jwt.keyUri";
-    private static final String SPRING_OAUTH2_ACCESS_TOKEN_URI = "spring.oauth2.client.accessTokenUri";
+    private static final String SPRING_OAUTH2_CLIENT_ID = "security.oauth2.client.clientId";
+    private static final String SPRING_OAUTH2_CLIENT_SECRET = "security.oauth2.client.clientSecret";
+    private static final String SPRING_OAUTH2_AUTHORIZE_URI = "security.oauth2.client.userAuthorizationUri";
+    private static final String SPRING_OAUTH2_KEY_URI = "security.oauth2.resource.jwt.keyUri";
+    private static final String SPRING_OAUTH2_ACCESS_TOKEN_URI = "security.oauth2.client.accessTokenUri";
     private static final String SSO_SERVICE_URL = "ssoServiceUrl";
-    private static final String SPRING_OAUTH2_USER_INFO_URI = "spring.oauth2.resource.userInfoUri";
-    private static final String SPRING_OAUTH2_TOKEN_INFO_URI = "spring.oauth2.resource.tokenInfoUri";
+    private static final String SPRING_OAUTH2_USER_INFO_URI = "security.oauth2.resource.userInfoUri";
+    private static final String SPRING_OAUTH2_TOKEN_INFO_URI = "security.oauth2.resource.tokenInfoUri";
 
     private Cloud cloud;
 

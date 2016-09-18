@@ -2,6 +2,7 @@ package io.pivotal.spring.cloud;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,8 +23,24 @@ public class SsoServiceInfoCreatorTests {
     }
 
     @Test
+    public void acceptServiceDataForTags() {
+        Map<String, Object> serviceData = new HashMap<>();
+        serviceData.put("tags", Arrays.asList("sso", "oauth2"));
+        serviceData.put("label", "p-foo");
+        assertTrue(creator.accept(serviceData));
+    }
+
+    @Test
     public void doesNotAcceptServiceData() {
         Map<String, Object> serviceData = new HashMap<>();
+        serviceData.put("label", "wrong-label");
+        assertFalse(creator.accept(serviceData));
+    }
+
+    @Test
+    public void doesNotAcceptServiceDataForTags() {
+        Map<String, Object> serviceData = new HashMap<>();
+        serviceData.put("tags", Arrays.asList("oauth2"));
         serviceData.put("label", "wrong-label");
         assertFalse(creator.accept(serviceData));
     }
@@ -37,6 +54,7 @@ public class SsoServiceInfoCreatorTests {
 
         Map<String, Object> serviceData = new HashMap<>();
         serviceData.put("credentials", credentials);
+        serviceData.put("label", P_SSO_ID);
 
         SsoServiceInfo info = creator.createServiceInfo(serviceData);
 

@@ -7,9 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.cloud.service.ServiceInfo;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -19,8 +17,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SsoServiceCredentialsListenerTest.TestConfig.class)
-@IntegrationTest()
+@SpringBootTest(classes = SsoServiceCredentialsListenerTest.TestConfig.class)
 public class SsoServiceCredentialsListenerTest {
 
     private static SsoServiceInfo info = Mockito.mock(SsoServiceInfo.class);
@@ -32,7 +29,7 @@ public class SsoServiceCredentialsListenerTest {
     public static void beforeClass() {
         when(MockCloudConnector.instance.isInMatchingCloud()).thenReturn(true);
         when(MockCloudConnector.instance.getServiceInfos()).thenReturn(Collections.singletonList(
-            (ServiceInfo) info));
+            info));
         when(info.getClientId()).thenReturn("test-client-id");
         when(info.getClientSecret()).thenReturn("test-client-secret");
         when(info.getAuthDomain()).thenReturn("test-auth-domain");

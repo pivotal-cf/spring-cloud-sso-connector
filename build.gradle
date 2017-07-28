@@ -85,6 +85,10 @@ uploadArchives {
             authentication(userName: ossrhUsername, password: ossrhPassword)
         }
 
+        pom.whenConfigured { pom ->
+            pom.dependencies = pom.dependencies.findAll { dep -> dep.scope != 'test' }
+        }
+
         pom.project {
             name 'Spring Cloud SSO Connector'
             description 'Spring Cloud Connector Extension for Single Sign-On Service on Pivotal Cloud Foundry'

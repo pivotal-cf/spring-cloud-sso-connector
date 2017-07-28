@@ -1,0 +1,97 @@
+{
+  "data" : {
+    "pairs" : [ {
+      "request" : {
+        "path" : {
+          "exactMatch" : "/token_keys"
+        },
+        "method" : {
+          "exactMatch" : "GET"
+        },
+        "destination" : {
+          "exactMatch" : "cf-identity-eng-test1.login.run.pivotal.io"
+        },
+        "scheme" : {
+          "exactMatch" : "https"
+        },
+        "query" : {
+          "exactMatch" : ""
+        },
+        "body" : {
+          "exactMatch" : ""
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "body" : "{\"keys\":[{\"kty\":\"RSA\",\"e\":\"AQAB\",\"use\":\"sig\",\"kid\":\"sha2-2017-01-20-key\",\"alg\":\"RS256\",\"value\":\"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyH6kYCP29faDAUPKtei3\\nV/Zh8eCHyHRDHrD0iosvgHuaakK1AFHjD19ojuPiTQm8r8nEeQtHb6mDi1LvZ03e\\nEWxpvWwFfFVtCyBqWr5wn6IkY+ZFXfERLn2NCn6sMVxcFV12sUtuqD+jrW8MnTG7\\nhofQqxmVVKKsZiXCvUSzfiKxDgoiRuD3MJSoZ0nQTHVmYxlFHuhTEETuTqSPmOXd\\n/xJBVRi5WYCjt1aKRRZEz04zVEBVhVkr2H84qcVJHcfXFu4JM6dg0nmTjgd5cZUN\\ncwA1KhK2/Qru9N0xlk9FGD2cvrVCCPWFPvZ1W7U7PBWOSBBH6GergA+dk2vQr7Ho\\nlQIDAQAB\\n-----END PUBLIC KEY-----\",\"n\":\"AMh-pGAj9vX2gwFDyrXot1f2YfHgh8h0Qx6w9IqLL4B7mmpCtQBR4w9faI7j4k0JvK_JxHkLR2-pg4tS72dN3hFsab1sBXxVbQsgalq-cJ-iJGPmRV3xES59jQp-rDFcXBVddrFLbqg_o61vDJ0xu4aH0KsZlVSirGYlwr1Es34isQ4KIkbg9zCUqGdJ0Ex1ZmMZRR7oUxBE7k6kj5jl3f8SQVUYuVmAo7dWikUWRM9OM1RAVYVZK9h_OKnFSR3H1xbuCTOnYNJ5k44HeXGVDXMANSoStv0K7vTdMZZPRRg9nL61Qgj1hT72dVu1OzwVjkgQR-hnq4APnZNr0K-x6JU\"},{\"kty\":\"RSA\",\"e\":\"AQAB\",\"use\":\"sig\",\"kid\":\"legacy-token-key\",\"alg\":\"RS256\",\"value\":\"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8/aXmEImpdwWHJlYc4G8\\n3BgZVmyhCdy7SCL0kM7wV5xCvRKK0k4nKjH0QW2E+0GIKzIj4JQhYU+MeZHrArfC\\nrfthIXcio/Ll6NvoTPY77XA7U6vBGCiLdGYSGrN8y064cF2uM8d3AEgTT0RzLK3E\\n688Ltq38GxnoXOUuLZmXS2HeHNd2bW/k6Eyd9Z3ymmdpVZXMyLwepNxU38WQS2bJ\\nPYXYvRkzoZ1ru/deExwbecI18NCeO/GKp3f8bwKuC2j3LKFJIAwW3zFoDrcAxpC/\\nJDG2RSTj//CRvhtd7JkeQLVKGyIHNtACaPT3tFT6scvVXHGPB5fRTLB8Lr+mK4RI\\nBwIDAQAB\\n-----END PUBLIC KEY-----\",\"n\":\"APP2l5hCJqXcFhyZWHOBvNwYGVZsoQncu0gi9JDO8FecQr0SitJOJyox9EFthPtBiCsyI-CUIWFPjHmR6wK3wq37YSF3IqPy5ejb6Ez2O-1wO1OrwRgoi3RmEhqzfMtOuHBdrjPHdwBIE09EcyytxOvPC7at_BsZ6FzlLi2Zl0th3hzXdm1v5OhMnfWd8ppnaVWVzMi8HqTcVN_FkEtmyT2F2L0ZM6Gda7v3XhMcG3nCNfDQnjvxiqd3_G8Crgto9yyhSSAMFt8xaA63AMaQvyQxtkUk4__wkb4bXeyZHkC1ShsiBzbQAmj097RU-rHL1VxxjweX0UywfC6_piuESAc\"}]}",
+        "encodedBody" : false,
+        "templated" : false,
+        "headers" : {
+          "Cache-Control" : [ "no-cache, no-store, max-age=0, must-revalidate" ],
+          "Connection" : [ "keep-alive" ],
+          "Content-Type" : [ "application/json;charset=UTF-8" ],
+          "Date" : [ "Thu, 27 Jul 2017 22:02:39 GMT" ],
+          "Expires" : [ "0" ],
+          "Hoverfly" : [ "Was-Here" ],
+          "Pragma" : [ "no-cache" ],
+          "Server" : [ "Apache-Coyote/1.1" ],
+          "Strict-Transport-Security" : [ "max-age=31536000 ; includeSubDomains" ],
+          "Transfer-Encoding" : [ "chunked" ],
+          "X-Content-Type-Options" : [ "nosniff" ],
+          "X-Frame-Options" : [ "DENY" ],
+          "X-Vcap-Request-Id" : [ "dc494306-07ac-4f3c-432c-7c86eeeb03ae" ],
+          "X-Xss-Protection" : [ "1; mode=block" ]
+        }
+      }
+    }, {
+      "request" : {
+        "path" : {
+          "exactMatch" : "/.well-known/openid-configuration"
+        },
+        "method" : {
+          "exactMatch" : "GET"
+        },
+        "destination" : {
+          "exactMatch" : "cf-identity-eng-test1.login.run.pivotal.io"
+        },
+        "scheme" : {
+          "exactMatch" : "https"
+        },
+        "query" : {
+          "exactMatch" : ""
+        },
+        "body" : {
+          "exactMatch" : ""
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "body" : "{\"issuer\":\"https://cf-identity-eng-test1.uaa.run.pivotal.io/oauth/token\",\"authorization_endpoint\":\"https://cf-identity-eng-test1.login.run.pivotal.io/oauth/authorize\",\"token_endpoint\":\"https://cf-identity-eng-test1.login.run.pivotal.io/oauth/token\",\"token_endpoint_auth_methods_supported\":[\"client_secret_basic\",\"client_secret_post\"],\"token_endpoint_auth_signing_alg_values_supported\":[\"RS256\",\"HS256\"],\"userinfo_endpoint\":\"https://cf-identity-eng-test1.login.run.pivotal.io/userInfo\",\"jwks_uri\":\"https://cf-identity-eng-test1.login.run.pivotal.io/token_keys\",\"scopes_supported\":[\"openid\",\"profile\",\"email\",\"phone\",\"roles\",\"user_attributes\"],\"response_types_supported\":[\"code\",\"code id_token\",\"id_token\",\"token id_token\"],\"subject_types_supported\":[\"public\"],\"id_token_signing_alg_values_supported\":[\"RS256\",\"HS256\"],\"id_token_encryption_alg_values_supported\":[\"none\"],\"claim_types_supported\":[\"normal\"],\"claims_supported\":[\"sub\",\"user_name\",\"origin\",\"iss\",\"auth_time\",\"amr\",\"acr\",\"client_id\",\"aud\",\"zid\",\"grant_type\",\"user_id\",\"azp\",\"scope\",\"exp\",\"iat\",\"jti\",\"rev_sig\",\"cid\",\"given_name\",\"family_name\",\"phone_number\",\"email\"],\"claims_parameter_supported\":false,\"service_documentation\":\"http://docs.cloudfoundry.org/api/uaa/\",\"ui_locales_supported\":[\"en-US\"]}",
+        "encodedBody" : false,
+        "templated" : false,
+        "headers" : {
+          "Cache-Control" : [ "no-cache, no-store, max-age=0, must-revalidate" ],
+          "Connection" : [ "keep-alive" ],
+          "Content-Type" : [ "application/json;charset=UTF-8" ],
+          "Date" : [ "Thu, 27 Jul 2017 22:02:38 GMT" ],
+          "Expires" : [ "0" ],
+          "Hoverfly" : [ "Was-Here" ],
+          "Pragma" : [ "no-cache" ],
+          "Server" : [ "Apache-Coyote/1.1" ],
+          "Strict-Transport-Security" : [ "max-age=31536000 ; includeSubDomains" ],
+          "Transfer-Encoding" : [ "chunked" ],
+          "X-Content-Type-Options" : [ "nosniff" ],
+          "X-Frame-Options" : [ "DENY" ],
+          "X-Vcap-Request-Id" : [ "8ceecf41-3af2-40bf-672b-50a935d8ea88" ],
+          "X-Xss-Protection" : [ "1; mode=block" ]
+        }
+      }
+    } ],
+    "globalActions" : {
+      "delays" : [ ]
+    }
+  },
+  "meta" : {
+    "schemaVersion" : "v3"
+  }
+}

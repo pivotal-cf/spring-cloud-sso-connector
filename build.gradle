@@ -54,10 +54,12 @@ artifacts {
 
 dependencies {
     compile 'org.springframework.cloud:spring-cloud-starter-oauth2'
+    compile 'org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE'
     compile 'org.springframework.cloud:spring-cloud-spring-service-connector'
     compile 'org.springframework.cloud:spring-cloud-cloudfoundry-connector'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
-    testCompile group: 'org.springframework.cloud', name: 'spring-cloud-cloudfoundry-connector', version: '1.1.1.RELEASE', classifier: 'tests'
+    testCompile group: 'org.springframework.cloud', name: 'spring-cloud-cloudfoundry-connector', classifier: 'tests'
+    testCompile group: 'io.specto', name: 'hoverfly-java', version: '0.8.0'
 }
 
 task wrapper(type: Wrapper) {

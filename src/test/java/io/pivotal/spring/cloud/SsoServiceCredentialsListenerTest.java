@@ -48,5 +48,6 @@ public class SsoServiceCredentialsListenerTest {
         assertEquals("test-auth-domain/userinfo", environment.getProperty("security.oauth2.resource.userInfoUri"));
         assertEquals("test-auth-domain/check_token", environment.getProperty("security.oauth2.resource.tokenInfoUri"));
         assertEquals("test-auth-domain", environment.getProperty("ssoServiceUrl"));
+        assertEquals("success", environment.getProperty("sso.connector.cloud.available"));
     }
 }

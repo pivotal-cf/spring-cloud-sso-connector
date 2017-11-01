@@ -35,6 +35,7 @@ public class SsoServiceCredentialsListener implements ApplicationListener<Applic
                 map.put("security.oauth2.resource.userInfoUri", ssoServiceInfo.getAuthDomain() + "/userinfo");
                 map.put("security.oauth2.resource.tokenInfoUri", ssoServiceInfo.getAuthDomain() + "/check_token");
                 map.put("security.oauth2.resource.jwk.key-set-uri", ssoServiceInfo.getAuthDomain() + "/token_keys");
+                map.put("sso.connector.cloud.available", "success");
                 MapPropertySource mapPropertySource = new MapPropertySource("vcapPivotalSso", map);
 
                 event.getEnvironment().getPropertySources().addFirst(mapPropertySource);

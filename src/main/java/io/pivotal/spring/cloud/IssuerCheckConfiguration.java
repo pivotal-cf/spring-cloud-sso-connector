@@ -13,7 +13,7 @@ import org.springframework.security.oauth2.provider.token.store.jwk.JwkTokenStor
 import java.net.MalformedURLException;
 
 @Configuration
-@ConditionalOnProperty({"ssoServiceUrl", "security.oauth2.resource.jwk.key-set-uri"})
+@ConditionalOnProperty({"sso.connector.cloud.available"})
 public class IssuerCheckConfiguration {
     @Value("${ssoServiceUrl}")
     private String ssoServiceUrl;

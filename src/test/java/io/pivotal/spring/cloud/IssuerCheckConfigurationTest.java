@@ -19,7 +19,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @EnableAutoConfiguration
 @TestPropertySource(properties = {
     "ssoServiceUrl=https://cf-identity-eng-test1.login.run.pivotal.io",
-    "security.oauth2.resource.jwk.key-set-uri=https://cf-identity-eng-test1.login.run.pivotal.io/token_keys"
+    "security.oauth2.resource.jwk.key-set-uri=https://cf-identity-eng-test1.login.run.pivotal.io/token_keys",
+    "sso.connector.cloud.available=success"
 })
 public class IssuerCheckConfigurationTest {
     @ClassRule

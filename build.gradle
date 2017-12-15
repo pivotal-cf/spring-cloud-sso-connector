@@ -74,6 +74,12 @@ signing {
     sign configurations.archives
 }
 
+install {
+    repositories.mavenInstaller {
+        configurePom(pom)
+    }
+}
+
 uploadArchives {
     repositories.mavenDeployer {
         beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
@@ -85,37 +91,41 @@ uploadArchives {
             authentication(userName: ossrhUsername, password: ossrhPassword)
         }
 
-        pom.whenConfigured { pom ->
-            pom.dependencies = pom.dependencies.findAll { dep -> dep.scope != 'test' }
-        }
-
-        pom.project {
-            name 'Spring Cloud SSO Connector'
-            description 'Spring Cloud Connector Extension for Single Sign-On Service on Pivotal Cloud Foundry'
-            url 'https://github.com/pivotal-cf/spring-cloud-sso-connector/'
-            inceptionYear '2015'
-            licenses {
-                license {
-                    name 'The Apache License, Version 2.0'
-                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    distribution 'jar'
-                }
-            }
-            scm {
-                connection 'scm:git:git@github.com:pivotal-cf/spring-cloud-sso-connector.git'
-                developerConnection 'scm:git:git@github.com:pivotal-cf/spring-cloud-sso-connector.git'
-                url 'https://github.com/pivotal-cf/spring-cloud-sso-connector/'
-            }
-            developers {
-                developer {
-                    organization 'Pivotal Software Inc'
-                    organizationUrl 'https://pivotal.io'
-                }
-            }
-        }
+        configurePom(pom)
     }
 }
 
 nexusStaging {
     packageGroup = 'io.pivotal'
+}
+
+private void configurePom(pom) {
+    pom.whenConfigured { p ->
+        p.dependencies = p.dependencies.findAll { dep -> dep.scope != 'test' }
+    }
+
+    pom.project {
+        name 'Spring Cloud SSO Connector'
+        description 'Spring Cloud Connector Extension for Single Sign-On Service on Pivotal Cloud Foundry'
+        url 'https://github.com/pivotal-cf/spring-cloud-sso-connector/'
+        inceptionYear '2015'
+        licenses {
+            license {
+                name 'The Apache License, Version 2.0'
+                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                distribution 'jar'
+            }
+        }
+        scm {
+            connection 'scm:git:git@github.com:pivotal-cf/spring-cloud-sso-connector.git'
+            developerConnection 'scm:git:git@github.com:pivotal-cf/spring-cloud-sso-connector.git'
+            url 'https://github.com/pivotal-cf/spring-cloud-sso-connector/'
+        }
+        developers {
+            developer {
+                organization 'Pivotal Software Inc'
+                organizationUrl 'https://pivotal.io'
+            }
+        }
+    }
 }

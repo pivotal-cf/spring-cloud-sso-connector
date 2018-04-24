@@ -27,7 +27,5 @@ public class IssuerCheckConfigurationLocalTest {
         thrown.expectMessage("No qualifying bean of type 'org.springframework.security.oauth2.provider.token.TokenStore' available");
 
         applicationContext.getBean( TokenStore.class );
-
     }
-
 }

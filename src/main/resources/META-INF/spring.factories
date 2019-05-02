@@ -1,4 +1,2 @@
-org.springframework.context.ApplicationListener=\
-io.pivotal.spring.cloud.SsoServiceCredentialsListener
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-io.pivotal.spring.cloud.IssuerCheckConfiguration
+io.pivotal.cfenv.spring.boot.CfEnvProcessor=\
+io.pivotal.spring.cloud.CfSingleSignOnProcessor

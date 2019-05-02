@@ -14,22 +14,26 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'maven'
 apply plugin: 'signing'
 apply plugin: 'io.codearte.nexus-staging'
 
+ext {
+    cfEnvVersion = '1.0.1.RELEASE'
+}
+
 repositories {
     mavenCentral()
 }
 
-dependencyManagement {
-    imports {
-        mavenBom 'org.springframework.cloud:spring-cloud-starter-parent:Dalston.RELEASE'
-    }
+dependencies {
+    compile "io.pivotal.cfenv:java-cfenv:$cfEnvVersion"
+    compile "io.pivotal.cfenv:java-cfenv-boot:$cfEnvVersion"
+    testCompile "io.pivotal.cfenv:java-cfenv-test-support:$cfEnvVersion"
 }
+
 
 javadoc {
     options.memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
@@ -50,16 +54,6 @@ task javadocJar(type: Jar) {
 artifacts {
     archives packageSources
     archives javadocJar
-}
-
-dependencies {
-    compile 'org.springframework.cloud:spring-cloud-starter-oauth2'
-    compile 'org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE'
-    compile 'org.springframework.cloud:spring-cloud-spring-service-connector'
-    compile 'org.springframework.cloud:spring-cloud-cloudfoundry-connector'
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
-    testCompile group: 'org.springframework.cloud', name: 'spring-cloud-cloudfoundry-connector', classifier: 'tests'
-    testCompile group: 'io.specto', name: 'hoverfly-java', version: '0.8.0'
 }
 
 task wrapper(type: Wrapper) {

@@ -2,6 +2,8 @@
 
 Spring Cloud Connector for use with the Pivotal Single Sign-On Service on Cloud Foundry
 
+**This library is only compatible with Spring Boot 1.5.**
+
 ### Spring Applications
 
 Spring Applications can use this connector to auto-configure its OAuth 2.0 client

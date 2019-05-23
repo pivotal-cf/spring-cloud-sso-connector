@@ -1,8 +1,8 @@
+**WARNING: This library is only compatible with Spring Boot 1.5.**
+
 #Spring Cloud Single Sign-On Connector
 
 Spring Cloud Connector for use with the Pivotal Single Sign-On Service on Cloud Foundry
-
-**This library is only compatible with Spring Boot 1.5.**
 
 ### Spring Applications
 

@@ -1,4 +1,4 @@
-**WARNING: This library is only compatible with Spring Boot 1.5.**
+### **WARNING: This library is only compatible with Spring Boot 1.5 and Spring Security 2. If you are looking for a library that supports Spring Boot 2.1+ and Spring Security 5+, please refer to [Java CFEnv](https://github.com/pivotal-cf/java-cfenv) and the updated [identity-sample-apps](https://github.com/pivotal-cf/identity-sample-apps)**
 
 #Spring Cloud Single Sign-On Connector
 

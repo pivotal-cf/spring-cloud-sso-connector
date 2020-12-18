@@ -8,12 +8,12 @@ import java.util.Map;
 public class SsoServiceInfoCreator extends CloudFoundryServiceInfoCreator<SsoServiceInfo> {
 
     public SsoServiceInfoCreator() {
-        super(new Tags());
+        super(new Tags("sso"));
     }
 
     @Override
     public boolean accept(Map<String, Object> serviceData) {
-        return serviceData.get("label").equals(SsoServiceInfo.P_SSO_ID);
+        return serviceData.get("label").equals(SsoServiceInfo.P_SSO_ID) || tagsMatch(serviceData);
     }
 
     @Override
@@ -22,6 +22,12 @@ public class SsoServiceInfoCreator extends CloudFoundryServiceInfoCreator<SsoSer
         String clientId = (String) credentials.get("client_id");
         String clientSecret = (String) credentials.get("client_secret");
         String authDomain = (String) credentials.get("auth_domain");
-        return new SsoServiceInfo(clientId, clientSecret, authDomain);
+        if (serviceData.get("label").equals(SsoServiceInfo.P_SSO_ID)) {
+            // to keep backward compatibility
+            return new SsoServiceInfo(clientId, clientSecret, authDomain);
+        } else {
+            String id = (String) serviceData.get("name");
+            return new SsoServiceInfo(id, clientId, clientSecret, authDomain);
+        }
     }
 }

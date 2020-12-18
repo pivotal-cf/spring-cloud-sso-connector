@@ -10,7 +10,11 @@ public class SsoServiceInfo extends BaseServiceInfo {
     private String authDomain;
 
     public SsoServiceInfo(String clientId, String clientSecret, String authDomain) {
-        super(P_SSO_ID);
+        this(P_SSO_ID, clientId, clientSecret, authDomain);
+    }
+
+    public SsoServiceInfo(String id, String clientId, String clientSecret, String authDomain) {
+        super(id);
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.authDomain = authDomain;
